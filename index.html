@@ -3,484 +3,491 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steffan Doyle — Creator & Actor</title>
+    <title>Steffan Doyle | 134M+ Views</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #f8f6f3;
-            --text-color: #2d2d2d;
-            --border-color: #dddddd;
-            --font-serif: 'Cormorant Garamond', serif;
-            --font-sans: 'Source Sans 3', sans-serif;
-            --spacing-sm: 1rem;
-            --spacing-md: 2rem;
-            --spacing-lg: 4rem;
-            --spacing-xl: 8rem;
+            --primary: #ff5252;
+            --bg-dark: #0a0a0a;
+            --bg-card: #1a1a1a;
+            --text-white: #ffffff;
+            --text-grey: #888888;
+            --border-grey: #2a2a2a;
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: var(--font-sans);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            box-sizing: border-box;
         }
 
         html {
             scroll-behavior: smooth;
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-serif);
-            font-weight: 400;
-            line-height: 1.2;
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            font-family: 'IBM Plex Sans', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
         }
 
         a {
-            color: inherit;
             text-decoration: none;
-            transition: opacity 0.3s ease;
+            color: inherit;
         }
 
-        a:hover {
-            opacity: 0.7;
+        section {
+            padding: 100px 20px;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 var(--spacing-md);
         }
 
-        section {
-            padding: var(--spacing-xl) 0;
-        }
-
-        .line {
-            height: 1px;
-            background-color: var(--border-color);
-            width: 100%;
-            margin: var(--spacing-lg) 0;
-        }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* 1. HERO */
+        /* HERO */
         .hero {
-            text-align: center;
-            padding-top: 15vh;
-            padding-bottom: 10vh;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            font-weight: 300;
-            letter-spacing: 0.05em;
-            color: #555;
-        }
-
-        .hero-image-placeholder {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 1px solid var(--text-color);
-            margin: var(--spacing-lg) auto 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* 2. STATS */
-        .stats {
-            padding: 0;
-        }
-        
-        .stats-container {
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-        }
-
-        @media (min-width: 768px) {
-            .stats-container {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        .stat-item {
-            padding: var(--spacing-md);
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        @media (min-width: 768px) {
-            .stat-item {
-                border-bottom: none;
-                border-right: 1px solid var(--border-color);
-            }
-            .stat-item:last-child {
-                border-right: none;
-            }
-        }
-
-        .stat-value {
-            font-family: var(--font-serif);
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: #666;
-            font-weight: 600;
-        }
-
-        /* 3. CONTENT SHOWCASE */
-        .section-header {
-            margin-bottom: var(--spacing-lg);
-            text-align: center;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            display: inline-block;
-            border-bottom: 1px solid var(--text-color);
-            padding-bottom: 0.5rem;
-        }
-
-        .work-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--spacing-lg);
-        }
-
-        .work-card {
-            display: grid;
-            grid-template-columns: 1fr;
-            border: 1px solid var(--border-color);
-            transition: background-color 0.4s ease;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        @media (min-width: 768px) {
-            .work-card {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .work-card:hover {
-            background-color: #f0ebe1;
-        }
-
-        .work-content {
-            padding: var(--spacing-lg);
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-        }
-
-        .work-content h3 {
-            font-size: 2rem;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .work-content p {
-            color: #555;
-            font-weight: 300;
-        }
-
-        .work-visual {
-            min-height: 250px;
-            background: linear-gradient(135deg, #eaddcc 0%, #f0ebe1 100%);
-            border-top: 1px solid var(--border-color);
-        }
-
-        @media (min-width: 768px) {
-            .work-visual {
-                border-top: none;
-                border-left: 1px solid var(--border-color);
-            }
-        }
-
-        /* 4. ABOUT */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--spacing-md);
-        }
-
-        @media (min-width: 768px) {
-            .about-grid {
-                grid-template-columns: 1fr 3fr;
-                gap: var(--spacing-lg);
-            }
-        }
-
-        .about-label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: #666;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .about-text p {
-            font-size: 1.25rem;
-            font-family: var(--font-serif);
-            line-height: 1.8;
-            margin-bottom: var(--spacing-md);
-            color: #333;
-        }
-
-        /* 5. SERVICES */
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-        }
-
-        @media (min-width: 768px) {
-            .services-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .service-item {
-            padding: var(--spacing-lg) 0;
-            border-top: 1px solid var(--border-color);
-        }
-
-        @media (min-width: 768px) {
-            .service-item:nth-child(odd) {
-                padding-right: var(--spacing-lg);
-            }
-            .service-item:nth-child(even) {
-                padding-left: var(--spacing-lg);
-                border-left: 1px solid var(--border-color);
-            }
-        }
-
-        .service-item h3 {
-            font-size: 1.8rem;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .service-item p {
-            color: #555;
-            font-weight: 300;
-        }
-
-        /* 6. CONTACT */
-        .contact {
+            align-items: center;
             text-align: center;
-            padding-bottom: var(--spacing-xl);
+            padding: 40px 20px;
         }
 
-        .contact-label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: var(--spacing-lg);
-            display: block;
+        .hero-stat {
+            color: var(--primary);
+            font-size: clamp(80px, 15vw, 150px);
+            line-height: 1;
+            margin-bottom: 10px;
         }
 
-        .contact-email {
-            font-family: var(--font-serif);
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            margin-bottom: var(--spacing-lg);
+        .hero-subtitle {
+            font-size: clamp(20px, 4vw, 30px);
+            margin-bottom: 20px;
+        }
+
+        .hero-name {
+            font-size: clamp(60px, 12vw, 120px);
+            line-height: 1;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-desc {
+            color: var(--text-grey);
+            font-size: clamp(16px, 2vw, 24px);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .btn {
             display: inline-block;
+            background-color: var(--primary);
+            color: var(--text-white);
+            padding: 16px 32px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+        }
+
+        /* STATS GRID */
+        .stats {
+            background-color: var(--bg-dark);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-card {
+            background-color: var(--bg-card);
+            padding: 40px;
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-left-color: var(--primary);
+            transform: translateX(10px);
+        }
+
+        .stat-card .stat-number {
+            color: var(--primary);
+            font-size: 48px;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .stat-card .stat-label {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-white);
+        }
+
+        /* VIRAL CONTENT */
+        .proof {
+            background-color: var(--bg-dark);
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-size: clamp(40px, 8vw, 80px);
+            margin-bottom: 60px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+            gap: 40px;
+        }
+
+        .video-card {
+            background-color: var(--bg-card);
+            padding: 20px;
+            border: 1px solid var(--border-grey);
+        }
+
+        .video-meta {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-grey);
+            padding-bottom: 10px;
+        }
+
+        .video-title {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .video-stat {
+            color: var(--primary);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
+
+        .tiktok-embed {
+            margin: 0 !important;
+        }
+
+        /* ABOUT */
+        .about {
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .about-left, .about-right {
+            flex: 1 1 500px;
+            padding: 100px 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .about-left {
+            background-color: var(--primary);
+            color: var(--text-white);
+        }
+
+        .about-quote {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(30px, 5vw, 50px);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .about-right {
+            background-color: var(--bg-dark);
+        }
+
+        .about-text {
+            font-size: clamp(18px, 2vw, 24px);
+            color: var(--text-grey);
+            line-height: 1.8;
+            max-width: 600px;
+        }
+
+        /* FOR BRANDS */
+        .brands {
+            background-color: var(--bg-dark);
+        }
+
+        .brands-title {
+            color: var(--text-white);
+            font-size: clamp(40px, 8vw, 80px);
+            margin-bottom: 60px;
+        }
+
+        .brand-row {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border-grey);
+            gap: 20px;
+        }
+
+        .brand-row:first-of-type {
+            border-top: 1px solid var(--border-grey);
+        }
+
+        .brand-number {
+            flex: 0 0 300px;
+            color: var(--primary);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .brand-text {
+            flex: 1 1 400px;
+            font-size: 20px;
+            color: var(--text-grey);
+        }
+
+        /* BOOK */
+        .book {
+            background-color: var(--primary);
+            text-align: center;
+            color: var(--text-white);
+        }
+
+        .book-title {
+            font-size: clamp(40px, 6vw, 70px);
+            margin-bottom: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.1;
+        }
+
+        .book-desc {
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            border: 2px solid var(--text-white);
+            color: var(--text-white);
+            padding: 16px 40px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin-bottom: 40px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--text-white);
+            color: var(--primary);
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: var(--spacing-lg);
+            gap: 30px;
         }
 
         .social-link {
-            font-size: 1.1rem;
-            letter-spacing: 0.05em;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: underline;
         }
 
-        /* Footer */
+        /* FOOTER */
         footer {
+            background-color: var(--bg-dark);
             text-align: center;
-            padding: var(--spacing-md) 0;
-            border-top: 1px solid var(--border-color);
-            font-size: 0.85rem;
-            color: #888;
+            padding: 40px 20px;
+            color: var(--text-grey);
+            font-size: 14px;
+            border-top: 1px solid var(--border-grey);
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 20px;
+            }
+            .brand-number {
+                flex: 1 1 100%;
+                margin-bottom: 10px;
+            }
+            .brand-text {
+                flex: 1 1 100%;
+            }
+            .about-left, .about-right {
+                padding: 60px 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <main class="container">
-        <!-- 1. HERO -->
-        <section class="hero fade-in">
-            <h1>Steffan Doyle</h1>
-            <p>Comedy Creator &middot; Character Artist &middot; Actor</p>
-            <div class="line"></div>
-            <div class="hero-image-placeholder"></div>
-        </section>
+    <section class="hero">
+        <div class="hero-stat">134M+</div>
+        <div class="hero-subtitle">views on TikTok</div>
+        <h1 class="hero-name">STEFFAN DOYLE</h1>
+        <p class="hero-desc">Australian comedy creator. 18M+ likes. 21 viral videos.</p>
+        <a href="#proof" class="btn">See the Proof</a>
+    </section>
 
-        <!-- 2. STATS -->
-        <section class="stats fade-in">
-            <div class="stats-container">
-                <div class="stat-item">
-                    <div class="stat-value">225K+</div>
-                    <div class="stat-label">Viral Reach</div>
+    <section class="stats" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">3.8M</div>
+                    <div class="stat-label">Likes on Top Video</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-value">Comedy & Character</div>
-                    <div class="stat-label">Creative Niche</div>
+                <div class="stat-card">
+                    <div class="stat-number">29.6M</div>
+                    <div class="stat-label">Views on Top Video</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-value">The Spider (IMDb)</div>
-                    <div class="stat-label">Acting Credit</div>
+                <div class="stat-card">
+                    <div class="stat-number">21</div>
+                    <div class="stat-label">Videos Over 1M Views</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-value">TikTok + Instagram</div>
-                    <div class="stat-label">Platforms</div>
+                <div class="stat-card">
+                    <div class="stat-number">40</div>
+                    <div class="stat-label">Videos Over 100K Views</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">428</div>
+                    <div class="stat-label">Total Videos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30K+</div>
+                    <div class="stat-label">Followers</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 3. CONTENT SHOWCASE -->
-        <section class="showcase fade-in">
-            <div class="section-header">
-                <h2>Selected Work</h2>
-            </div>
-            <div class="work-grid">
-                <a href="https://www.tiktok.com/@steffandoyle" target="_blank" rel="noopener noreferrer" class="work-card">
-                    <div class="work-content">
-                        <h3>Rio Bird Impressions</h3>
-                        <p>Viral character work reaching 225,000+ likes &mdash; bringing animated characters to life through physical comedy and voice</p>
+    <section class="proof" id="proof">
+        <div class="container">
+            <h2 class="section-title">The Proof</h2>
+            <div class="video-grid">
+                
+                <div class="video-card">
+                    <div class="video-meta">
+                        <span class="video-title">Wedding Lineup</span>
+                        <span class="video-stat">29.6M views</span>
                     </div>
-                    <div class="work-visual"></div>
-                </a>
-                <a href="https://www.tiktok.com/@steffandoyle" target="_blank" rel="noopener noreferrer" class="work-card">
-                    <div class="work-content">
-                        <h3>Original Comedy</h3>
-                        <p>Sketch comedy and trending challenge content with a distinctive Australian comedic voice</p>
+                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@steffandoyle/video/7518726552671079698" data-video-id="7518726552671079698" style="max-width:605px;min-width:325px;"><section></section></blockquote>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-meta">
+                        <span class="video-title">Candy/Aura</span>
+                        <span class="video-stat">27.8M views</span>
                     </div>
-                    <div class="work-visual"></div>
-                </a>
-                <a href="https://www.tiktok.com/@steffandoyle" target="_blank" rel="noopener noreferrer" class="work-card">
-                    <div class="work-content">
-                        <h3>Character Performances</h3>
-                        <p>Physical comedy and voice impression work spanning digital content and live performance</p>
+                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@steffandoyle/video/7494932333313723666" data-video-id="7494932333313723666" style="max-width:605px;min-width:325px;"><section></section></blockquote>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-meta">
+                        <span class="video-title">Rio Bird (last one)</span>
+                        <span class="video-stat">19.7M views</span>
                     </div>
-                    <div class="work-visual"></div>
-                </a>
-            </div>
-        </section>
+                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@steffandoyle/video/7557738584896294162" data-video-id="7557738584896294162" style="max-width:605px;min-width:325px;"><section></section></blockquote>
+                </div>
 
-        <!-- 4. ABOUT -->
-        <section class="about fade-in">
-            <div class="about-grid">
-                <div class="about-label">About</div>
-                <div class="about-text">
-                    <p>Steffan Doyle is an Australian comedy creator and emerging actor whose character impressions have captured audiences across platforms. His Rio movie bird character work achieved viral success with over 225,000 likes on TikTok, establishing him as a distinctive voice in comedy content creation. With acting credits including 'The Spider' and a growing portfolio of brand collaborations, Steffan bridges digital content and traditional performance.</p>
-                    <p>Based in Australia, Steffan creates comedy content that combines physical performance, voice work, and sharp comedic timing. His multi-platform presence spans TikTok and Instagram, where he continues to build an engaged audience drawn to his character-driven comedy.</p>
+                <div class="video-card">
+                    <div class="video-meta">
+                        <span class="video-title">Rio Bird Gossip</span>
+                        <span class="video-stat">9.4M views</span>
+                    </div>
+                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@steffandoyle/video/7557301056191909127" data-video-id="7557301056191909127" style="max-width:605px;min-width:325px;"><section></section></blockquote>
                 </div>
-            </div>
-        </section>
 
-        <!-- 5. SERVICES -->
-        <section class="services fade-in">
-            <div class="section-header">
-                <h2>Partnerships</h2>
             </div>
-            <div class="services-grid">
-                <div class="service-item">
-                    <h3>Brand Collaborations</h3>
-                    <p>Integrated comedy content for brands seeking authentic Gen-Z engagement</p>
-                </div>
-                <div class="service-item">
-                    <h3>Content Creation</h3>
-                    <p>Bespoke UGC and branded content with distinctive comedic perspective</p>
-                </div>
-                <div class="service-item">
-                    <h3>Character & Voice</h3>
-                    <p>Professional character performances for campaigns, media, and events</p>
-                </div>
-                <div class="service-item">
-                    <h3>Appearances</h3>
-                    <p>Live comedy performances and character appearances for events and activations</p>
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 6. CONTACT -->
-        <section class="contact fade-in">
-            <span class="contact-label">Enquiries</span>
-            <a href="mailto:steffandoyle@icloud.com" class="contact-email">steffandoyle@icloud.com</a>
+    <section class="about" id="about">
+        <div class="about-left">
+            <div class="about-quote">
+                "21 videos over 1 million views. Not a fluke — a pattern."
+            </div>
+        </div>
+        <div class="about-right">
+            <div class="about-text">
+                Steffan Doyle is an Australian comedy creator whose physical comedy and character impressions have generated over 134 million views on TikTok. From his viral Rio bird characters to his wedding lineup series, Steffan creates content that consistently breaks through to massive audiences. With acting credits including 'The Spider' on IMDb, he bridges digital content creation with traditional performance.
+            </div>
+        </div>
+    </section>
+
+    <section class="brands" id="brands">
+        <div class="container">
+            <h2 class="brands-title">Why Steffan</h2>
+            
+            <div class="brand-row">
+                <div class="brand-number">01 — Proven Scale</div>
+                <div class="brand-text">134M+ views, 18M+ likes. Not potential reach — actual, proven, organic reach.</div>
+            </div>
+            
+            <div class="brand-row">
+                <div class="brand-number">02 — Viral Consistency</div>
+                <div class="brand-text">21 videos over 1M views. Steffan doesn't just go viral once — he does it repeatedly.</div>
+            </div>
+            
+            <div class="brand-row">
+                <div class="brand-number">03 — Authentic Comedy</div>
+                <div class="brand-text">Gen-Z audiences trust Steffan's voice. Brand integrations feel natural, not scripted.</div>
+            </div>
+            
+            <div class="brand-row">
+                <div class="brand-number">04 — Multi-Format</div>
+                <div class="brand-text">TikTok, Instagram, UGC, live events, acting. One creator, every format.</div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="book" id="book">
+        <div class="container">
+            <h2 class="book-title">Let's make something that gets 29 million views.</h2>
+            <p class="book-desc">Available for brand partnerships, UGC campaigns, character work, and events.</p>
+            <a href="mailto:steffandoyle@icloud.com" class="btn-outline">steffandoyle@icloud.com</a>
+            
             <div class="social-links">
-                <a href="https://www.tiktok.com/@steffandoyle" target="_blank" rel="noopener noreferrer" class="social-link">TikTok &rarr;</a>
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-link">Instagram &rarr;</a>
+                <a href="https://www.tiktok.com/@steffandoyle" target="_blank" rel="noopener noreferrer" class="social-link">TikTok</a>
+                <a href="https://www.instagram.com/steffandoyle" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
-            &copy; 2026 Steffan Doyle
+            2026 Steffan Doyle
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.15
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.fade-in').forEach(element => {
-                observer.observe(element);
-            });
-        });
-    </script>
+    <script async src="https://www.tiktok.com/embed.js"></script>
 </body>
 </html>
